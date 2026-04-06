@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title>Test</title></head>
+<body style="background:#0F1923; color:white; font-size:32px; padding:40px;">
+  <p>Static HTML works ✓</p>
+  <div id="out">Loading JS...</div>
+  <script src="./_expo/static/js/web/index-f6057538e9c01199664e109aeb34ba86.js"></script>
+  <script>
+    setTimeout(function() {
+      var root = document.getElementById('root') || document.body;
+      document.getElementById('out').textContent = 'JS loaded. Root children: ' + (document.getElementById('root') ? document.getElementById('root').children.length : 'no root div');
+    }, 2000);
+  </script>
+  <div id="root"></div>
+</body>
+</html>
