@@ -6,21 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>Ball Sort</title>
     <style id="expo-reset">
-      html, body { height: 100%; }
-      body { overflow: hidden; }
+      html, body { height: 100%; margin: 0; }
+      body { overflow: hidden; background: #0F1923; }
       #root { display: flex; height: 100%; flex: 1; }
+      #error-box { display:none; position:fixed; top:0; left:0; right:0; background:red; color:white; padding:16px; font-size:14px; z-index:9999; white-space:pre-wrap; word-break:break-all; }
     </style>
     <meta name="theme-color" content="#0F1923">
-    <meta name="description" content="Sort colored balls into tubes — a fun puzzle game">
-    <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Ball Sort">
     <link rel="icon" href="./favicon.ico" />
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="error-box"></div>
     <div id="root"></div>
+    <script>
+      window.onerror = function(msg, src, line, col, err) {
+        var box = document.getElementById('error-box');
+        box.style.display = 'block';
+        box.textContent = 'ERROR: ' + msg + '\nFile: ' + src + '\nLine: ' + line;
+      };
+      window.addEventListener('unhandledrejection', function(e) {
+        var box = document.getElementById('error-box');
+        box.style.display = 'block';
+        box.textContent = 'PROMISE ERROR: ' + (e.reason && e.reason.message ? e.reason.message : String(e.reason));
+      });
+    </script>
     <script src="./_expo/static/js/web/index-862046ab1fdfa09f615e386c0faf9f19.js" defer></script>
   </body>
 </html>
