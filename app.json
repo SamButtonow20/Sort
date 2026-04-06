@@ -24,7 +24,16 @@
       "predictiveBackGestureEnabled": false
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro",
+      "output": "single",
+      "name": "Ball Sort",
+      "shortName": "Ball Sort",
+      "description": "Sort colored balls into tubes — a fun puzzle game",
+      "themeColor": "#0F1923",
+      "backgroundColor": "#0F1923",
+      "display": "standalone",
+      "orientation": "portrait"
     }
   }
 }
