@@ -156,7 +156,7 @@ export default function App() {
       </View>
 
       {/* Game area */}
-      <ScrollView contentContainerStyle={styles.gameArea}>
+      <ScrollView style={styles.scrollView} contentContainerStyle={styles.gameArea}>
         {rows.map((row, rowIdx) => (
           <View key={rowIdx} style={styles.row}>
             {row.map((tube) => (
@@ -214,7 +214,7 @@ const styles = StyleSheet.create({
   },
   headerButtons: {
     flexDirection: 'row',
-    gap: 10,
+    columnGap: 10,
   },
   iconBtn: {
     backgroundColor: 'rgba(255,255,255,0.1)',
@@ -230,6 +230,9 @@ const styles = StyleSheet.create({
   iconBtnText: {
     fontSize: 22,
     color: '#FFFFFF',
+  },
+  scrollView: {
+    flex: 1,
   },
   gameArea: {
     flexGrow: 1,
